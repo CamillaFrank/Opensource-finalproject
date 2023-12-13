@@ -63,12 +63,16 @@ In this project, the Gradient Boosting Classifier (`GradientBoostingClassifier`)
 The trained model is then used to predict the labels for the test dataset (`X_test`). The predictions are obtained using the `predict` method.
 
 ## Hyperparameters
-The primary hyperparameter is the random seed (`random_seed`) used for reproducibility. It is set to 42 in this implementation. Additionally, the model file is saved as "trained_model.joblib" for future use.
+
+The hyperparameters for the Gradient Boosting Classifier in this project are set as follows:
+
+- **n_estimators:** The number of boosting stages to be run. In this implementation, it is set to 300. Increasing the number of estimators improves the model's performance, but it also increases computation time.
+- **random_state:** The random seed used for reproducibility. It ensures that the randomization during model training is consistent across different runs. In this implementation, it is set to `random_seed` (value: 42).
 
 ## Files in the Directory
 - **main.ipynb:** The main Python script containing the code for data loading, preprocessing, model training, and evaluation.
 - **tumor_dataset:** A directory containing the training dataset with subdirectories for each tumor class.
-- **trained_model.joblib:** A pre-trained model file that can be used without rebuilding the model. Skip the model-building step by loading this file.
+- **trained_model_hyper.joblib:** A pre-trained model file that can be used without rebuilding the model. Skip the model-building step by loading this file.
 
 ## Instructions
 ### Configuration
@@ -81,7 +85,7 @@ pip install scikit-learn scikit-image
 1. Execute the main script `main.ipynb`.
 2. The script loads the dataset, preprocesses the images, and splits them into training and testing sets.
 3. The Gradient Boosting Classifier is trained on the training set, and predictions are made on the test set.
-4. Optionally, the model-building step can be skipped by using the pre-trained model file "trained_model.joblib."
+4. Optionally, the model-building step can be skipped by using the pre-trained model file "trained_model_hyper.joblib."
 5. The accuracy of the model on the test set is printed.
 
 ### Copyright and Licensing
